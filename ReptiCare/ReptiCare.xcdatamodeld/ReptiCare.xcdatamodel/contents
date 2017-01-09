@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="16A323" minimumToolsVersion="Xcode 7.3" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Defecation" representedClassName=".Defecation" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="kindOfDefecation_" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uniqueID" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="reptile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reptile" inverseName="defecations" inverseEntity="Reptile" syncable="YES"/>
+    </entity>
+    <entity name="Feeding" representedClassName=".Feeding" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="refused" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uniqueID" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="feedingItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FeedingItem" inverseName="feedings" inverseEntity="FeedingItem" syncable="YES"/>
+        <relationship name="reptile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reptile" inverseName="feedings" inverseEntity="Reptile" syncable="YES"/>
+    </entity>
+    <entity name="FeedingItem" representedClassName=".FeedingItem" syncable="YES">
+        <attribute name="customFoodItem" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customFoodSize" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="foodItem_" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="foodSize_" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="live" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uniqueID" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="feedings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Feeding" inverseName="feedingItems" inverseEntity="Feeding" syncable="YES"/>
+    </entity>
+    <entity name="Length" representedClassName=".Length" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="length" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uniqueID" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="reptile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reptile" inverseName="lengths" inverseEntity="Reptile" syncable="YES"/>
+    </entity>
+    <entity name="Other" representedClassName=".Other" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uniqueID" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="reptile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reptile" inverseName="others" inverseEntity="Reptile" syncable="YES"/>
+    </entity>
+    <entity name="Reptile" representedClassName=".Reptile" syncable="YES">
+        <attribute name="breed" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateOfBirth" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="feedingPeriodInDays" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="gender_" optional="YES" attributeType="Integer 16" defaultValueString="0" allowsExternalBinaryDataStorage="YES" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="idealTemperatureAtDay" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idealTemperatureAtNight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="imageHeader" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="morph" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reminderTime" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uniqueID" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="defecations" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Defecation" inverseName="reptile" inverseEntity="Defecation" syncable="YES"/>
+        <relationship name="feedings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Feeding" inverseName="reptile" inverseEntity="Feeding" syncable="YES"/>
+        <relationship name="lengths" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Length" inverseName="reptile" inverseEntity="Length" syncable="YES"/>
+        <relationship name="others" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Other" inverseName="reptile" inverseEntity="Other" syncable="YES"/>
+        <relationship name="sheddings" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Shedding" inverseName="reptile" inverseEntity="Shedding" syncable="YES"/>
+        <relationship name="weights" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Weight" inverseName="reptile" inverseEntity="Weight" syncable="YES"/>
+    </entity>
+    <entity name="Settings" representedClassName=".Settings" syncable="YES">
+        <attribute name="disablePushNotifications" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="disableSounds" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uniqueID" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="weightUnit_" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <entity name="Shedding" representedClassName=".Shedding" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="exelentShedding" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uniqueID" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="reptile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reptile" inverseName="sheddings" inverseEntity="Reptile" syncable="YES"/>
+    </entity>
+    <entity name="Weight" representedClassName=".Weight" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="uniqueID" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="reptile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reptile" inverseName="weights" inverseEntity="Reptile" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Defecation" positionX="-108" positionY="-99" width="128" height="120"/>
+        <element name="Feeding" positionX="-443" positionY="-99" width="128" height="135"/>
+        <element name="FeedingItem" positionX="-650" positionY="-99" width="128" height="150"/>
+        <element name="Length" positionX="-470" positionY="36" width="128" height="105"/>
+        <element name="Other" positionX="-443" positionY="138" width="128" height="135"/>
+        <element name="Reptile" positionX="-270" positionY="-100" width="128" height="315"/>
+        <element name="Settings" positionX="-639" positionY="138" width="128" height="120"/>
+        <element name="Shedding" positionX="-83" positionY="27" width="128" height="118"/>
+        <element name="Weight" positionX="-99" positionY="162" width="128" height="105"/>
+    </elements>
+</model>

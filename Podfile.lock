@@ -1,0 +1,64 @@
+PODS:
+  - ChameleonFramework (2.1.0):
+    - ChameleonFramework/Default (= 2.1.0)
+  - ChameleonFramework/Default (2.1.0)
+  - Charts/Core (3.0.0)
+  - Charts/Realm (3.0.0):
+    - Charts/Core
+    - RealmSwift (~> 1.1)
+  - DZNEmptyDataSet (1.8.1)
+  - Eureka (1.7.0)
+  - Realm (1.1.0):
+    - Realm/Headers (= 1.1.0)
+  - Realm/Headers (1.1.0)
+  - RealmSwift (1.1.0):
+    - Realm (= 1.1.0)
+  - SwiftMessages (3.0.0)
+
+DEPENDENCIES:
+  - ChameleonFramework (from `https://github.com/ViccAlexander/Chameleon.git`, branch `swift3`)
+  - Charts/Realm (from `https://github.com/danielgindi/Charts.git`, branch `master`)
+  - DZNEmptyDataSet
+  - Eureka (from `https://github.com/xmartlabs/Eureka.git`, branch `Swift3`)
+  - SwiftMessages (from `https://github.com/SwiftKickMobile/SwiftMessages.git`, branch `swift3`)
+
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :branch: swift3
+    :git: https://github.com/ViccAlexander/Chameleon.git
+  Charts:
+    :branch: master
+    :git: https://github.com/danielgindi/Charts.git
+  Eureka:
+    :branch: Swift3
+    :git: https://github.com/xmartlabs/Eureka.git
+  SwiftMessages:
+    :branch: swift3
+    :git: https://github.com/SwiftKickMobile/SwiftMessages.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: c400c32eead1c6e74008983c3e7c845ae069b41d
+    :git: https://github.com/ViccAlexander/Chameleon.git
+  Charts:
+    :commit: 180c4183a1ba8f569e16af6dd9b3f95885552b2b
+    :git: https://github.com/danielgindi/Charts.git
+  Eureka:
+    :commit: 7aa2d1828cbeb141b07b3a83aac65326917aefff
+    :git: https://github.com/xmartlabs/Eureka.git
+  SwiftMessages:
+    :commit: 2b398660759bc08afcda725c0c95305e674d21f0
+    :git: https://github.com/SwiftKickMobile/SwiftMessages.git
+
+SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Charts: 3f0da988b104c8e5f069fcef55da699f597dac67
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
+  Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
+  RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
+  SwiftMessages: debcd4e7e5761021478ee240fbd0a5e02381c33f
+
+PODFILE CHECKSUM: 6c30329cfbafd7f73b2b5299f8a7c66999a140db
+
+COCOAPODS: 1.1.0.rc.2

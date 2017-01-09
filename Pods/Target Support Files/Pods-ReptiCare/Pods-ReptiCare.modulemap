@@ -1,0 +1,6 @@
+framework module Pods_ReptiCare {
+  umbrella header "Pods-ReptiCare-umbrella.h"
+
+  export *
+  module * { export * }
+}
